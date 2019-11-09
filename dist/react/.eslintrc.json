@@ -1,0 +1,21 @@
+{
+  "env": { "es6": true, "browser": true, "commonjs": true },
+  "extends": ["plugin:react/recommended", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "object-curly-spacing": ["error", "always"],
+    "babel/object-curly-spacing": ["error", "always"],
+    "react/no-deprecated": "warn",
+    "react/prop-types": [0]
+  },
+  "plugins": ["react"]
+}

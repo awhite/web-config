@@ -1,0 +1,22 @@
+{
+  "name": "eslint",
+  "version": "1.0.0",
+  "description": "eslint configurations for various project types",
+  "main": "index.js",
+  "author": "Alex White <a24white@edu.uwaterloo.ca>",
+  "license": "MIT",
+  "scripts": {
+    "generate": "babel-node scripts/generate",
+    "generate-node": "babel-node scripts/generate.js node",
+    "generate-react": "babel-node scripts/generate.js react"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "prettier": "^1.19.1"
+  }
+}
