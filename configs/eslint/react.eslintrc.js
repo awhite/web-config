@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import general from './general.eslintrc';
+import general from './default.eslintrc';
 
 const config = {
   env: {
