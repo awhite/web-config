@@ -1,6 +1,8 @@
-import prettier from 'prettier';
 import fs from 'fs';
 import path from 'path';
+
+import prettier from 'prettier';
+
 import flavorConfigs from '../configs';
 
 const DIST_PATH = './dist';
@@ -10,13 +12,12 @@ generateConfigs();
 function generateConfigs() {
   const flavorToGenerate = process.argv[2] || 'all'; // what type of project
   Object.keys(flavorConfigs).some(flavor => {
-    if (flavor === flavorToGenerate || flavorToGenerate === 'all') {
-      console.log(`Generating configs for ${flavor}`);
-      generateConfigsForFlavor(flavor);
-      if (flavorToGenerate !== 'all') {
-        return;
-      }
+    if (flavor !== flavorToGenerate && flavorToGenerate !== 'all') {
+      return false;
     }
+    console.log(`Generating configs for ${flavor}`);
+    generateConfigsForFlavor(flavor);
+    return flavorToGenerate !== 'all';
   });
 }
 
@@ -25,13 +26,12 @@ function generateConfigsForFlavor(flavor) {
   const dir = path.resolve(DIST_PATH, flavor);
   const typeToGenerate = process.argv[3] || 'all'; // which configs should be generated
   Object.keys(configs).some(configType => {
-    if (typeToGenerate === configType || typeToGenerate === 'all') {
-      console.log(`Generating ${configType} config`);
-      generateOne({ configType, configs, dir });
-      if (typeToGenerate !== 'all') {
-        return true;
-      }
+    if (typeToGenerate !== configType && typeToGenerate !== 'all') {
+      return false;
     }
+    console.log(`Generating ${configType} config`);
+    generateOne({ configType, configs, dir });
+    return typeToGenerate !== 'all';
   });
 }
 
@@ -56,7 +56,6 @@ function jsonify(config) {
 function saveFile({ configType, text, dir }) {
   const filenames = {
     eslint: '.eslintrc.json',
-    prettier: '.prettierrc'
   };
 
   if (!fs.existsSync(dir)) {

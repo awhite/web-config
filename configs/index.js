@@ -1,17 +1,13 @@
 import eslintConfig, { node as nodeEslintConfig, react as reactEslintConfig } from './eslint';
-import prettierConfig, { react as reactPrettierConfig } from './prettier';
 
 export default {
   node: {
-    eslint: nodeEslintConfig,
-    prettier: prettierConfig
+    eslint: nodeEslintConfig
   },
   react: {
-    eslint: reactEslintConfig,
-    prettier: reactPrettierConfig
+    eslint: reactEslintConfig
   },
   default: {
-    eslint: eslintConfig,
-    prettier: prettierConfig
+    eslint: eslintConfig
   }
 };
