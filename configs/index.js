@@ -2,12 +2,12 @@ import eslintConfig, { node as nodeEslintConfig, react as reactEslintConfig } fr
 
 export default {
   node: {
-    eslint: nodeEslintConfig
+    eslint: nodeEslintConfig,
   },
   react: {
-    eslint: reactEslintConfig
+    eslint: reactEslintConfig,
   },
   default: {
-    eslint: eslintConfig
-  }
+    eslint: eslintConfig,
+  },
 };

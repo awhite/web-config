@@ -19,5 +19,14 @@ export default {
     'import/no-anonymous-default-export': 'off',
     'line-comment-position': 'off',
     'array-callback-return': 'off',
+    'consistent-return': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx'],
+        moduleDirectory: ['node_modules', 'src'],
+      },
+    },
   },
 };

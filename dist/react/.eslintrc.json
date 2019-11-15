@@ -19,8 +19,17 @@
     "import/no-anonymous-default-export": "off",
     "line-comment-position": "off",
     "array-callback-return": "off",
+    "consistent-return": "off",
     "react/no-deprecated": "warn",
     "react/prop-types": [0]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"],
+        "moduleDirectory": ["node_modules", "src"]
+      }
+    }
   },
   "plugins": ["react"]
 }

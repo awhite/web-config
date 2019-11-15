@@ -15,6 +15,7 @@
     "import/no-anonymous-default-export": "off",
     "line-comment-position": "off",
     "array-callback-return": "off",
+    "consistent-return": "off",
     "no-console": "off"
   }
 }
